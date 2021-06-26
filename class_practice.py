@@ -16,7 +16,7 @@ class Dog: #클라스 선언
         self.size += 3
 
 CokerSpaniel = Dog("Coker Spaniel", 10, 7)
-Corgi = Dog("Corgi", 8, 6)
+Corgi = Dog("Corgi", 8, 5)
 
 print(CokerSpaniel)
 CokerSpaniel.bark()

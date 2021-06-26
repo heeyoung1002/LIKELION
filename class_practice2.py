@@ -37,7 +37,7 @@ class Corgi(Dog):
     
     def bark(self):
         self.age -= 2
-        self.size += 2
+        self.size += 4
 
 
 print(f'Dog Count: {Dog.count}')
