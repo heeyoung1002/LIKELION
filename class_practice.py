@@ -4,7 +4,7 @@ class Dog: #클라스 선언
         self.breed = breed
         self.color = color
         self.size = size
-        Dog.count += 1
+        Dog.count += 5
 
     def __str__(self):
         return f'{self.breed} {self.color} {self.size}'
@@ -15,7 +15,7 @@ class Dog: #클라스 선언
         self.color -= 2
         self.size += 3
 
-CokerSpaniel = Dog("Coker Spaniel", 10, 7)
+CokerSpaniel = Dog("Coker Spaniel", 10, 6)
 Corgi = Dog("Corgi", 8, 5)
 
 print(CokerSpaniel)

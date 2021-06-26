@@ -36,7 +36,7 @@ class Corgi(Dog):
         return f'{self.breed} {self.age} {self.size} {self.color}'
     
     def bark(self):
-        self.age -= 2
+        self.age -= 6
         self.size += 4
 
 
