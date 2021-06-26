@@ -6,4 +6,4 @@ if password == my_input:  # 비밀번호를 입력받아 저장하는 변수
 else:
     print("FAIL")
 
-print("로그인 절차가 끝났습니다")
+print("로그인 절차가 끝났습니다") #if 문이 끝나면 출력
