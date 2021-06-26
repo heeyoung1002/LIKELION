@@ -1,0 +1,48 @@
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: purple;
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+    border: 5px solid gray;
+    box-sizing: border-box;
+    /* overflow: scroll; */
+}
+
+#box1 {
+    background-color: red;
+    margin-right: auto;
+}
+
+#box2 {
+    background-color: green;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#box3 {
+    background: blue;
+    margin-left: auto;
+}
+
+.container {
+    display: flex;
+    height: 1000px;
+    background-color: yellowgreen;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.outer {
+    width: 100vw;
+    height: 100vw;
+    background-color: gray;
+}
+
+.inner {
+    width: 80%;
+    height: 50%;
+    background-color: yellow;
+}

@@ -1,0 +1,42 @@
+h1 {
+    font-size:50px;
+    text-align:center;
+    font-family: 'Sigmar One', cursive;;
+}
+
+body {
+    font-family: 'Sigmar One', cursive;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+p#contact {
+    text-align: center;
+    color: #535353;
+    font-size: 22px;
+}
+
+p{
+    font-size: 20px;
+}ß
+
+img#profile {
+    display: block;
+    margin: 0px auto;
+}
+
+#intro, #experience {
+    padding: 20px 100px;
+}
+
+#links {
+    list-style-type: none;
+}
+
+.experience-detail {
+    padding-bottom: 20px;
+}
+
+a {
+    list-style-type: none;
+    text-decoration: none;
+}

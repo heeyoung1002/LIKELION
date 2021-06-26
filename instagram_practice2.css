@@ -1,0 +1,111 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Container {
+    width: 940px;
+    height: 200px;
+    background: #fafafafa;
+    border: 1px solid #dbdbdb;
+    margin: 20px auto;
+    display: flex;
+}
+
+.Logo {
+    width: 290px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo-Frame {
+    width: 170px ;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid #ebebeb;
+    overflow: hidden;
+}
+
+#Logo-Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-size: 28px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Profile {
+    overflow:visible;
+}
+
+.Profile-Info {
+    list-style-type: none;
+    display: flex;
+}
+
+.Profile-Info-Details {
+    margin-right: 40px;
+}
+
+#link {
+    list-style-type: none;
+    text-decoration: none;
+    color:darkblue;
+}
+
+.Profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.Container2 {
+    width: 940px;
+    height: 150px;
+    background: #fafafafa;
+    border: 1px solid #dbdbdb;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.Story {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Image-Frame {
+    width: 90px ;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid #ebebeb;
+    overflow: hidden;
+}
+
+#Story-Image {
+    width: 90px;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hashtag {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
