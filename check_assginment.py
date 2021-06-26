@@ -5,7 +5,6 @@ def check_assignment ():
 
 check_assignment()
 
-
 def check_assignment (name):
     print(f"{name} 님 안녕하세요")
     print(f"과제는 다 해오셨나요 {name}님?")
