@@ -1,6 +1,6 @@
 password = "likelion"
 
-while True:
+while True: #while (1)
     
     my_input = input("Password: ")
 
