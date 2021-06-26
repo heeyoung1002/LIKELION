@@ -9,7 +9,7 @@ body {
     font-family: 'Signika Negative', sans-serif;
 }
 
-p#contact {
+p#contact { #paragraph 안에 contact
     text-align: center;
     color: #535353;
     font-size: 22px;
