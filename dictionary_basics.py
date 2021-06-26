@@ -37,4 +37,4 @@ print(English)
 #원래 딕셔너리를 업데이트하는 것(Key가 같은경우)
 print(Claire)
 Claire.update(Claire2)
-print(Claire)
+print(Claire) #업에이트한 값 출력
