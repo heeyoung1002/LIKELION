@@ -1,7 +1,7 @@
 #age 라는 변수에 입력자로 부터 받은 값을 저장
 age = int(input('나이가 어떻게 되세요?: '))
 
-#if, elseif, else 
+#if, elseif, else 선언
 if age < 30:
     print('30대 미만입니다.')
 elif 30 <= age <= 32:
