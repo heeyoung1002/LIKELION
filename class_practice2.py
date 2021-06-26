@@ -42,6 +42,7 @@ class Corgi(Dog):
 
 print(f'Dog Count: {Dog.count}')
 
+print()
 cokerspaniel = Cokerspaniel()
 corgi = Corgi()
 

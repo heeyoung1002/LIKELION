@@ -9,13 +9,14 @@ class Dog: #클라스 선언
     def __str__(self):
         return f'{self.breed} {self.color} {self.size}'
         
+
     #클라스의 모든 메소드는 첫 파라미터로 self를 가진다
     def bark(self):
         self.color -= 2
         self.size += 3
 
 CokerSpaniel = Dog("Coker Spaniel", 10, 7)
-Corgi = Dog("Corgi", 9, 6)
+Corgi = Dog("Corgi", 8, 6)
 
 print(CokerSpaniel)
 CokerSpaniel.bark()
