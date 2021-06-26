@@ -5,7 +5,7 @@ class Car: #첫글자를 대문자로 지정하고 class를 선언한다
         self.fuel = fuel
         self.mileage = 0
 
-    def accel(self):
+    def accel(self): #새로운 메소드를 
         self.fuel -= 2
         self.mileage += 10
 
