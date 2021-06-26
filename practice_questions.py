@@ -1,5 +1,6 @@
 print('=' *50)
 
+#input을 받는다
 name = input('What is your name?')
 yearborn = int(input('What year did you born in?'))
 
