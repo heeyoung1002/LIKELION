@@ -1,6 +1,6 @@
 print('HELLO STRANGERS!')
-<<<<<<< HEAD
+
 print('THIS IS COMPLETELY DIFFERENT FROM C!!')
-=======
+
 print('THIS IS COMPLETELY DIFFERENT FROM C')
->>>>>>> 3943b1d (WEEK 1 -Practices)
+
