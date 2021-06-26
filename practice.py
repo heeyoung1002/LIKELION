@@ -1,5 +1,6 @@
 names = ['Camilla', 'Prada', 'Bagi']
 
+#숙제검사하는 함수 선언
 def check_homework (name, assignment):
     print(f"{name}님 숙제는 다 하셨나요?")
     print(f"{name}님 항상 화이팅입니다")
