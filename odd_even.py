@@ -1,3 +1,4 @@
+#함수 선언 - 짝수일때
 def is_even (number):
     if number % 2 == 0:
         return True
