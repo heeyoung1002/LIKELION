@@ -1,3 +1,5 @@
+#문자열 
+
 print('camilla') # 작은따옴표
 
 print("CAMILLA") # 큰따옴표
