@@ -1,3 +1,5 @@
+#if문 안에 if문
+
 looks_young = True 
 
 if looks_young: # (1)
