@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from posts import views
 
+# server가 serving 가능한 URL 이 나와있는 모듈이다
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', views.index),
-    
+    path('camilla/', views.camilla),
+    path('', views.landingpage),   #landing page등록을 위한 url 등록
 ]
