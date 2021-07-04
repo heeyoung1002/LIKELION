@@ -1,19 +1,33 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
     <title>Mangostagram</title>
 </head>
 
 <body>
     <h1>Posts</h1>
-    <ul> 
-        <!-- posts에 있는 아이템들을 하나씩 꺼내서 post라는 변수라한다 -->
+     <!-- 게시물이 있을 때와 없을 때를 if로 구분해서 출력 -->
+    
+     <img id="profile" src="{% static 'posts/images/spaniel.jpeg' %}" alt="spaniel">
+
+    <div class = "profile_bg"></div>
+
+     {% if posts %}
+     <ul> 
         {% for post in posts %}
             <li>Author: {{ post.author }} | Body: {{ post.body }}</li>
         {% endfor %}
-    </ul>
+    </ul>   
+        
+    {% else %}
+        <p>NO POSTS</p>
+            
+    {% endif %}
 </body>
 </html>

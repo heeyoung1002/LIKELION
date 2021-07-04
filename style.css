@@ -1,42 +1,17 @@
 h1 {
-    font-size:50px;
-    text-align:center;
-    font-family: 'Sigmar One', cursive;;
+    color: red;
 }
 
-body {
-    font-family: 'Sigmar One', cursive;
-    font-family: 'Signika Negative', sans-serif;
+#profile {
+    width: 400px;
 }
 
-p#contact { #paragraph 안에 contact
-    text-align: center;
-    color: #535353;
-    font-size: 22px;
-}
-
-p{
-    font-size: 20px;
-}ß
-
-img#profile {
-    display: block;
-    margin: 0px auto;
-}
-
-#intro, #experience {
-    padding: 20px 100px;
-}
-
-#links {
-    list-style-type: none;
-}
-
-.experience-detail {
-    padding-bottom: 20px;
-}
-
-a {
-    list-style-type: none;
-    text-decoration: none;
+.profile_bg {
+    width: 400px;
+    height: 400px;
+    background-image: url("images/spaniel.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    /* static tag를 사용할 수 없다. django language가 아니어서 */
 }
