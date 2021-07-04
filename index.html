@@ -8,27 +8,13 @@
 </head>
 
 <body>
-    <h1>Post</h1>
-    
+    <h1>Posts</h1>
     <ul>
-        <li> Author: {{ post.author }}</li>
-        <li> Body: {{ post.body }}</li>
-        <!-- view로부터 post라는 데이터를 받아서 활용하겠다 -->
+        <!-- posts에 0번째 indext에 있는 author-->
+        <li>Author: {{ posts.0.author }} | Body: {{ posts.0.body }}</li>
+        <li>Author: {{ posts.1.author }} | Body: {{ posts.1.body }}</li>
+        <li>Author: {{ posts.2.author }} | Body: {{ posts.2.body }}</li>
+        <li>Author: {{ posts.3.author }} | Body: {{ posts.3.body }}</li>
     </ul>
-
-    <h2>Nubmers</h2>
-    <ul> 
-        <!-- 리스트 안에 index를 파이썬과 다르게 []표현하지않고 .으로 표현 -->
-        <li>{{ numbers.0 }}</li>
-        <li>{{ numbers.1 }}</li>
-        <li>{{ numbers.2 }}</li>
-    </ul>
-
-    <h3>Member</h3>
-    <ul>
-        <li>{{ member.name }}</li>
-        <li>{{ member.age }}</li>
-    </ul>
-    
 </body>
 </html>
