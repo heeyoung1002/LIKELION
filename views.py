@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
+#Post model 클라스를 사용해서 post라는 변수에다가 
 
 # Create your views here.\
 
@@ -10,6 +11,8 @@ def index(request):
 
     context = { # 게시물 딕셔너리를 여러개 담고 있는 리스트
         'posts' : posts
+        #하나씩 하드코딩하지 않아도 데이터베이스로 부터 가져온 데이터를 대입만 하면된다 그러면 post변수에 저장되어있는데 posts라는 키로 index.template 에 넘어갈것이고
+        #context 딕셔너리가 템플릿에 전달될때에는 각 key가 변수로 전환이 된다
     }
 
     return render(request, 'posts/index.html', context)
