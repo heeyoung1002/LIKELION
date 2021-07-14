@@ -7,5 +7,5 @@ from . import views  #현재 디렉토리 (.) 에있는 같은 선상에 있는 
 urlpatterns = [
     path('', views.index),
     path('<int:post_id>/', views.detail),
-    path('<int:post_id>/comments/', views.comments)
+    # /post/post_id로 받았을때의 url 패턴
 ]
