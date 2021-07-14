@@ -29,8 +29,14 @@ def detail(request, post_id):
 def new(request):
     return render(request, 'posts/new.html')
 
+#request 라는 파라미터에 HTTP에 관련된 모든 request가 담길 것이다
 def create(request):
-    return render(request, 'posts/create.html')    
+    #create 함수가 실행될 때 마다, request.GET 라는게 서브로그로 출력된다
+    print(request.GET.get('author'))
+    print(request.GET.get('body'))
+
+    context = {'author': request.GET.get('author'), 'body':request.GET.get('body')}
+    return render(request, 'posts/create.html', context)    
    
 def camilla(request):
     return HttpResponse('Hello Camilla Kim!')
