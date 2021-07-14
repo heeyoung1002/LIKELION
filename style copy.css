@@ -1,0 +1,19 @@
+h1 {
+    color: red;
+}
+
+#profile {
+    width: 400px;
+}
+
+.profile_bg {
+    width: 400px;
+    height: 400px;
+    background-image: url("images/spaniel.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    /* static.tag를 사용할 수 없다. Django Language가 아니어서 */
+}
+
+    

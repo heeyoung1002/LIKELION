@@ -1,17 +1,8 @@
-h1 {
-    color: red;
+/* 모든 테이블과 테이블 데이터에 적용하겠다 */
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
-#profile {
-    width: 400px;
-}
 
-.profile_bg {
-    width: 400px;
-    height: 400px;
-    background-image: url("images/spaniel.jpeg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    /* static tag를 사용할 수 없다. django language가 아니어서 */
-}
+    
