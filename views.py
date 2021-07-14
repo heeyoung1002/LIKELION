@@ -26,6 +26,12 @@ def detail(request, post_id):
     return render(request, 'posts/detail.html', context)
     #상세페이지를 보여주기위한 detail.html 을 띄어준다
 
+def new(request):
+    return render(request, 'posts/new.html')
+
+def create(request):
+    return render(request, 'posts/create.html')    
+   
 def camilla(request):
     return HttpResponse('Hello Camilla Kim!')
 
