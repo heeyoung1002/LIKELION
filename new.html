@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
+    <title>Mangostagram</title>
+</head>
+
+<body>
+    <h1>New Post</h1>
+
+    <!-- get아니면 post 방식을 사용할지 지정한다. get 방식을 사용해서 action 어떤 URL 을 줄지 적는다 -->
+    <form method="GET" action="/posts/create">
+        <div>
+            <!-- input element에 대한 설명 -->
+        <label for="author">Author</label>
+        <!-- text type의 input을 받는다. 입력할수있는 element추가  -->
+        <input id="author" type="text" name="author"> 
+        </div>
+        
+        <div>
+            <label for="body">Body</label>
+            <textarea id="body" cols="30" rows="10" name="body"></textarea>
+        </div>
+        
+        <input type="submit" value="작성">
+    </form>
+    
+    <a href = "{% url 'posts:index' %}">목록</a>
+</body>
+</html>
