@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
+    <title>Mangostagram</title>
+</head>
+
+<body>
+    <h1>Posts</h1>
+     <!-- 게시물이 있을 때와 없을 때를 if로 구분해서 출력 -->
+    
+     <!-- <img id="profile" src="{% static 'posts/images/spaniel.jpeg' %}" alt="spaniel">
+
+    <div class = "profile_bg"></div> -->
+
+    <table>
+        <thead>
+            <tr>
+                <th> First Name </th>
+                <th> Last Name </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <!-- 각 줄을 쪼개서 한 row를 몇개의 cell로 구성할지 알수있다. 즉 행한줄에 칸이 두개있다  -->
+              <td>John</td>
+              <td>Doe</td>
+            </tr>
+            <tr>
+              <td>Jane</td>
+              <td>Doe</td>
+            </tr>
+        </tbody>
+        <!-- 테이블에 행 <tr>이 두줄이야 -->
+       
+      </table>
+
+     {% if posts %}
+     <ul> 
+        {% for post in posts %}
+            <li>Author: {{ post.author }} | Body: {{ post.body }}</li>
+        {% endfor %}
+    </ul>   
+        
+    {% else %}
+        <p>NO POSTS</p>
+            
+    {% endif %}
+</body>
+</html>
