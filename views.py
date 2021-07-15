@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Post
+from django.utils import timezone
 #Post model 클라스를 사용해서 post라는 변수에다가 
 
 # Create your views here.\
@@ -31,12 +32,15 @@ def new(request):
 
 #request 라는 파라미터에 HTTP에 관련된 모든 request가 담길 것이다
 def create(request):
-    #create 함수가 실행될 때 마다, request.GET 라는게 서브로그로 출력된다
-    print(request.GET.get('author'))
-    print(request.GET.get('body'))
+    author = request.POST.get('author')
+    body = request.POST.get('body')
+    
+    #post 인스턴스를 만들어서 post 변수에 저장한다 
+    post = Post(author=author, body=body, created_at=timezone.now)
+    #게시물저장
+    post.save()
 
-    context = {'author': request.GET.get('author'), 'body':request.GET.get('body')}
-    return render(request, 'posts/create.html', context)    
+    return redirect('posts:detail', post_id=post.id)
    
 def camilla(request):
     return HttpResponse('Hello Camilla Kim!')
