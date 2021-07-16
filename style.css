@@ -1,8 +1,67 @@
-/* 모든 테이블과 테이블 데이터에 적용하겠다 */
-table, td, th {
-    border: 1px solid black;
-    border-collapse: collapse;
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px 30px 30px;
+}
+
+.section-title {
+    font-size: 85px;
+    color: darkslategray;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.section-subtitle-bar{
+    display: flex;
+}
+
+.section-subtitle{
+    font-size: 32px;
+    color: coral;
+    color: darkorange;
+    color: #E56d29;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 
-    
+.navbar{
+    list-style-type: none;
+    font-size: 28px;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Do Hyeon', sans-serif;
+    padding-left: 70px;
+    align-items: flex-end;
+}
+
+.navbar-detail{
+    margin-right: 25px;
+}
+
+.explanation{
+    display: flex;
+}
+
+#main-image{
+    width: 530px;
+    height: 470px;
+}
+
+.explanation-list{
+    list-style-type: none;
+    font-family: 'Jeju Gothic', sans-serif;
+    font-size: 30px;
+    padding-left: 60px;
+    padding-top: 40px; 
+}
+
+.explanation-list-detail{
+    margin: 25px 0px;
+}
+
+
