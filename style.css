@@ -7,10 +7,6 @@
 .mainpage_container{
     height: 80vh;
     width: 100vw;
-    /* background-image: url('images/parenting3.jpg');
-    background-repeat : no-repeat;
-    background-size : cover;
-    border-radius: 50%; */
 }
 
 #main-image{
@@ -30,11 +26,6 @@
 
 .section-title {
     font-size: 55px;
-    color: #787579;
-    color: #3160A4;
-    color: #18643F;
-    color: #3D6B4A;
-    color: #436A57;
     color: #3F675A;
     font-family: 'Do Hyeon', sans-serif;
 }
@@ -46,10 +37,6 @@
 
 .section-subtitle{
     font-size: 25px;
-    color: #F2BA2E;
-    color: #3160A4;
-    color: #787579;
-    color: #8EBFBA;
     color: #7FABA7;
     font-family: 'Do Hyeon', sans-serif;
     width: 38%;
@@ -59,7 +46,6 @@
 .navbar{
     display: flex;
     font-family: 'Do Hyeon', sans-serif;
-    color: #4E3D5D;
     color: #4F4D4F;
     list-style-type: none;
     align-items: flex-start;
@@ -88,18 +74,12 @@
     font-size: 20px;
     padding-top: 100px;
     padding-right: 10px;
-    border-radius: 5%;
-    
+    border-radius: 5%;  
 }
 
 .explanation-list-detail{
     margin: 23px 0px;
-    /* background-color: #CFC0DE; */
     padding: 15px 5px;
-    /* color: #554861;
-    color: #3F675A; */
-    /* text-decoration: underline;
-    text-decoration-color: #7FABA7; */
     border-bottom: 10px solid #7FABA7;
 }
 
