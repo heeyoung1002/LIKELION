@@ -35,57 +35,39 @@
         <div class="levels">
             <div class="level0">
                 <h3>{{ levels.0 }}</h3>
-                <ul class="books_in_row">
-                    {% for book in books %}
-                    <li><img src="{{ book.bookimages.url }}" class="bookimage-top" alt="{{ book.title }}">
-                    </li>
-                    {% endfor %}
-                </ul>
+
+                <table>
+                    <tr>
+                        {% for book in books %}
+                        <td><a href="./{{ book.id }}">{{ book.cover }}</a></td>
+                        {% endfor %}
+                    </tr>
+                </table>
             </div>
 
             <div class="level1">
                 <h3>{{ levels.1 }}</h3>
-                <ul class="books_in_row">
-                    {% for book in books %}
-                    <li>{{ book.cover }}</li>
-                    {% endfor %}
-                </ul>
+                
             </div>
             
             <div class="level2">
                 <h3>{{ levels.2 }}</h3>
-                <ul class="books_in_row">
-                    {% for book in books %}
-                    <li>{{ book.cover }}</li>
-                    {% endfor %}
-                </ul>
+               
             </div>
             
             <div class="level3">
                 <h3>{{ levels.3 }}</h3>
-                <ul class="books_in_row">
-                    {% for book in books %}
-                    <li>{{ book.cover }}</li>
-                    {% endfor %}
-                </ul>
+                
             </div>
 
             <div class="level4">
                 <h3>{{ levels.4 }}</h3>
-                <ul class="books_in_row">
-                    {% for book in books %}
-                    <li>{{ book.cover }}</li>
-                    {% endfor %}
-                </ul>
+                
             </div>
 
             <div class="level5">
                 <h3>{{ levels.5 }}</h3>
-                <ul class="books_in_row">
-                    {% for book in books %}
-                    <li>{{ book.cover }}</li>
-                    {% endfor %}
-                </ul>
+                
             </div>
 
     </div>
