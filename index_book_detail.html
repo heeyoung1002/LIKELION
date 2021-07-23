@@ -1,12 +1,50 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'library/style-bookdetail.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Poor+Story&family=Sunflower:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>Book-Detail</title>
 </head>
+
 <body>
     book detail page
+
+    {% if book %}
+    
+    <div>
+        {{ book.cover }}
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <th>Title</th>
+                <td>{{ book.title }}</td>
+            </tr>
+            <tr>
+                <th>About</th>
+                <td>{{ book.about }}</td>
+            </tr>
+            <tr>
+                <th>Youtube Link</th>
+                <td>{{ book.urllink }}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>좋아요를 누르면 마이페이지에 저장됩니다</td>
+            </tr>
+        </table>
+    </div>
+   
+    {% endif %}
+
 </body>
 </html>
