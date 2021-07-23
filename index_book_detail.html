@@ -15,7 +15,6 @@
 </head>
 
 <body>
-    book detail page
 
     {% if book %}
     
@@ -45,6 +44,8 @@
     </div>
    
     {% endif %}
+
+    <a href=" {% url 'library:booksindex' %}">목록으로</a>
 
 </body>
 </html>

@@ -41,7 +41,7 @@
                 <table>
                     <tr>
                         {% for book in books %}
-                        <td><a href="./{{ book.id }}">{{ book.cover }}</a></td>
+                        <td><a href="{% url 'library:bookdetail' book.id %}">{{ book.cover }}</a></td>
                         {% endfor %}
                     </tr>
                 </table>
