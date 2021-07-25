@@ -17,7 +17,7 @@
 <body class="mainpage_container">
     
     <div class="header">
-        <h1 class="section-title">엄빠표 영어</h1>
+        <h1 class="section-title"><a href="{% url 'mainpage:mainpageindex' %}">엄빠표 영어</a></h1>
         
         <div class="section-subtitle-bar">
             <div>
@@ -26,10 +26,10 @@
             
             <div>
                 <ul class="navbar">
-                    <li class="navbar-list-detail">레벨별 원서 추천</li>
-                    <Li class="navbar-list-detail">영어 영상물 추천</Li>
-                    <li class="navbar-list-detail">도서 및 사이트 추천</li>
-                    <li class="navbar-list-detail"><span class="login">로그인/회원가입</span></li>
+                    <li class="navbar-list-detail"><a href="{% url 'library:booksindex' %}">레벨별 원서 추천</a></li>
+                    <Li class="navbar-list-detail"><a href="{% url 'library:videosindex' %}"> 영어 영상물 추천</a></Li>
+                    <li class="navbar-list-detail"><a href="{% url 'library:websitesindex' %}">도서 및 사이트 추천</a></li>
+                    <li class="navbar-list-detail"><span class="login"><a href="{% url 'login:loginindex' %}">로그인/회원가입</a></span></li>
                 </ul>    
             </div>
         </div>
