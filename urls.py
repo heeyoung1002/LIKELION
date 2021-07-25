@@ -1,28 +1,14 @@
-"""momdadenglish URL Configuration
+from django.urls import path
+from . import views
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, include
-from mainpage import views
-from library import views
 
+app_name = 'library'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('', include('mainpage.urls')), #렌딩페이지 (landing page)를 위한 urlpatterns
-    path('mainpage/', include('mainpage.urls', namespace='mainpage')),
-    path('library/', include('library.urls', namespace='library')),
-    path('login/', include('login.urls', namespace='login')),
+    path('books/', views.index_books, name='booksindex'),
+    path('books/<int:book_id>/', views.index_books_detail, name='bookdetail'),
+    path('videos/', views.index_videos, name='videosindex'),
+    path('videos/<int:video_id>/', views.index_videos_detail, name='videodetail'),
+    path('websites/', views.index_websites, name='websitesindex'),
+    path('websites/<int:website_id>/', views.index_websites_detail, name='websitedetail'),
 ] 
