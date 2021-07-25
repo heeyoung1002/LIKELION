@@ -10,25 +10,79 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Poor+Story&family=Sunflower:wght@300;500&display=swap" rel="stylesheet">
-    <title>Document</title>
+    
+    <title>Websites</title>
 </head>
 <body>
     
     <div class="header">
-        <h1 class="section-title">엄빠표 영어</h1>
+        <h1 class="section-title"><a href="{% url 'mainpage:mainpageindex' %}">엄빠표 영어</a></h1>
         <div class="section-subtitle-bar">
             <div>
                 <h2 class ="section-subtitle">내 아이를 영어로 부터 방치하고 싶지 않다면</h2>       
             </div>
             <div>
                 <ul class="navbar">
-                    <li class="navbar-list-detail"><a href="library/books/">레벨별 원서 추천</a></li>
-                    <Li class="navbar-list-detail"><a href="library/videos/"> 영어 영상물 추천</a></Li>
-                    <li class="navbar-list-detail"><a href="library/websites/">도서 및 사이트 추천</a></li>
-                    <li class="navbar-list-detail"><span class="login"><a href="login/">로그인/회원가입</a></span></li>
+                    <li class="navbar-list-detail"><a href="{% url 'library:booksindex' %}">레벨별 원서 추천</a></li>
+                    <Li class="navbar-list-detail"><a href="{% url 'library:videosindex' %}"> 영어 영상물 추천</a></Li>
+                    <li class="navbar-list-detail"><a href="{% url 'library:websitesindex' %}">도서 및 사이트 추천</a></li>
+                    <li class="navbar-list-detail"><span class="login"><a href="{% url 'login:loginindex' %}">로그인/회원가입</a></span></li>
                 </ul>    
             </div>
         </div>
+    </div>
+
+
+    <div class="recommendation">
+        <div class="levels">
+            <div class="level0">
+                <h3>{{ levels.0 }}</h3>
+            
+                <table>
+                    <tr>
+                        {% for website1 in website1 %}
+                        <td>
+                            <a href="{% url 'library:websitedetail' website1.id %}">비디오사진</a>
+                            <a>{{ website1.title }}</a>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </div>
+
+            <div class="level1">
+                <h3>{{ levels.1 }}</h3>
+                
+                <table>
+                    <tr>
+                        {% for website2 in website2 %}
+                        <td>
+                            <a href="{% url 'library:websitedetail' website2.id %}">비디오사진</a>
+                            <a>{{ website2.title }}</a>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </div>
+            
+
+            <div class="level1">
+                <h3>{{ levels.2 }}</h3>
+                
+                <table>
+                    <tr>
+                        {% for website3 in website3 %}
+                        <td>
+                            <a href="{% url 'library:websitedetail' website3.id %}">비디오사진</a>
+                            <a>{{ website3.title }}</a>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
     </div>
 
     

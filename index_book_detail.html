@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <th>Youtube Link</th>
-                <td>{{ book.urllink }}</td>
+                <td><a href="{{ book.urllink }}" target="_blank">{{ book.urllink }}</a></td>
             </tr>
             <tr>
                 <th></th>
@@ -45,7 +45,7 @@
    
     {% endif %}
 
-    <a href=" {% url 'library:booksindex' %}">목록으로</a>
+    <a href="{% url 'library:booksindex' %}">목록으로</a>
 
 </body>
 </html>
