@@ -1,20 +1,12 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'library/style-bookdetail.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Poor+Story&family=Sunflower:wght@300;500&display=swap" rel="stylesheet">
+{% block style %}
+<link rel="stylesheet" href="{% static 'library/style.css' %}">
+{% endblock %}
 
-    <title>Book-Detail</title>
-</head>
-
-<body>
+{% block content %} 
 
     {% if book %}
     
@@ -47,5 +39,4 @@
 
     <a href="{% url 'library:booksindex' %}">목록으로</a>
 
-</body>
-</html>
+{% endblock %}
