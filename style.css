@@ -66,31 +66,3 @@ ul{
     font-size: 20px;
     color: white;
 }
-
-
-.recommendation{
-    height: 90vh;
-    width: 100vw;
-    padding: 5px 20px;
-}
-
-.arlevels{
-    border-radius: 10%;
-    width: 50px;
-    height: 20px;
-    color: black;
-}
-
-#level0{
-    background-color: darkred;
-}
-
-
-.books_in_row{
-    display: flex;
-    flex-direction: row;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    justify-content: space-between;
-}
