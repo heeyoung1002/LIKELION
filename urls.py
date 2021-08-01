@@ -1,20 +1,30 @@
-from django.urls import path
-from . import views
+"""momdadenglish URL Configuration
 
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from mainpage import views
+from library import views
+from django.conf import settings
+from django.conf.urls.static import static
 
-app_name = 'library'
 
 urlpatterns = [
-    path('books/', views.index_books, name='booksindex'),
-    path('books/<int:book_id>/', views.index_books_detail, name='bookdetail'),
-    path('books/<int:book_id>/like/', views.booklike, name='booklike'),
-
-    path('videos/', views.index_videos, name='videosindex'),
-    path('videos/<int:video_id>/', views.index_videos_detail, name='videodetail'),
-    path('videos/<int:video_id>/like/', views.videolike, name='videolike'),
-
-    path('websites/', views.index_websites, name='websitesindex'),
-    path('websites/<int:website_id>/', views.index_websites_detail, name='websitedetail'),
-    path('websites/<int:website_id>/like/', views.websitelike, name='websitelike'),
-    
-] 
+    path('admin/', admin.site.urls),
+    # path('', include('mainpage.urls')), #렌딩페이지 (landing page)를 위한 urlpatterns
+    path('mainpage/', include('mainpage.urls', namespace='mainpage')),
+    path('library/', include('library.urls', namespace='library')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
