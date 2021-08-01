@@ -12,7 +12,7 @@
     {% if website %}
     
     <div>
-        {{ website.cover }}
+        <img src="{{ website.cover.url }}" width="350" height="350">
     </div>
 
     <div>
@@ -30,8 +30,20 @@
                 <td><a href="{{ website.urllink }}" target="_blank">{{ website.urllink }}</a></td>
             </tr>
             <tr>
-                <th></th>
-                <td>좋아요를 누르면 마이페이지에 저장됩니다</td>
+                <th>좋아요를 누르면 마이페이지에 저장됩니다</th>
+                <td>
+                    {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'library:websitelike' website.id %}">
+                        {% csrf_token %}
+
+                        {% if user in website.liked_users.all %}
+                            <button type="submit" class="btn btn-primary">LIKE</button>
+                        {% else %}
+                            <button type="submit" class="btn btn-secondary">LIKE</button>
+                        {% endif %}
+                        </form>
+                    {% endif %}
+                </td>
             </tr>
         </table>
     </div>

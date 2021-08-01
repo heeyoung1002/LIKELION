@@ -30,8 +30,20 @@
                 <td><a href="{{ video.urllink }}" target="_blank">{{ video.urllink }}</a></td>
             </tr>
             <tr>
-                <th></th>
-                <td>좋아요를 누르면 마이페이지에 저장됩니다</td>
+                <th>좋아요를 누르면 마이페이지에 저장됩니다</th>
+                <td>
+                    {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'library:videolike' video.id %}">
+                        {% csrf_token %}
+
+                        {% if user in video.liked_users.all %}
+                            <button type="submit" class="btn btn-primary">LIKE</button>
+                        {% else %}
+                            <button type="submit" class="btn btn-secondary">LIKE</button>
+                        {% endif %}
+                        </form>
+                    {% endif %}
+                </td>
             </tr>
         </table>
     </div>

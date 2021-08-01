@@ -2,19 +2,22 @@
 
 {% load static %}
 
+
 {% block style %}
-<link rel="stylesheet" href="{% static 'library/style.css' %}">
+<link rel="stylesheet" href="{% static 'library/style-bookdetail.css' %}">
 {% endblock %}
 
-{% block content %} 
 
+{% block content %} 
+<div class="container">
     {% if book %}
     
-    <div>
-        {{ book.cover }}
-    </div>
+   <div class="book-detail">
+        <div>
+            <img src="{{ book.cover.url }}" width="350" height="350">
+        </div>
 
-    <div>
+        <div>
         <table>
             <tr>
                 <th>Title</th>
@@ -29,14 +32,33 @@
                 <td><a href="{{ book.urllink }}" target="_blank">{{ book.urllink }}</a></td>
             </tr>
             <tr>
+                <th>좋아요를 누르면 마이페이지에 저장됩니다</th>
+                <td>
+                    {% if user.is_authenticated %}
+                        <form method="POST" action="{% url 'library:booklike' book.id %}">
+                        {% csrf_token %}
+
+                        {% if user in book.liked_users.all %}
+                            <button type="submit" class="btn btn-primary">LIKE</button>
+                        {% else %}
+                            <button type="submit" class="btn btn-secondary">LIKE</button>
+                        {% endif %}
+                        </form>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
                 <th></th>
-                <td>좋아요를 누르면 마이페이지에 저장됩니다</td>
+                <td><a href="{% url 'library:booksindex' %}">목록으로</a></td>
             </tr>
         </table>
-    </div>
+        </div>
    
     {% endif %}
 
-    <a href="{% url 'library:booksindex' %}">목록으로</a>
+   </div>
+
+</div>
+    
 
 {% endblock %}
