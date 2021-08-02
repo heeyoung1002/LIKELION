@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %} 
-<div class="container">
     <div class="recommendation">
         <div class="levels">
 
@@ -19,11 +18,14 @@
                         <tr>
                             {% for book1 in book1 %}
                             <td>
-                                <a href="{% url 'library:bookdetail' book1.id %}"><img src="{{ book1.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
-                                    onmouseleave="zoomOut(event)"></a>
+                                <div class="eachbook">
+                                    <a href="{% url 'library:bookdetail' book1.id %}"><img src="{{ book1.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                                        onmouseleave="zoomOut(event)"></a>
+                                </div>
                             </td>
                             {% endfor %}
                         </tr>
+                         
                     </table>     
                 </div>
                 
@@ -32,52 +34,60 @@
             <div class="level1">
                 <h3 id="level-1">{{ levels.1 }}</h3>
                 
-                <table>
-                    <tr>
-                        {% for book2 in book2 %}
-                        <td>
-                            <a href="{% url 'library:bookdetail' book2.id %}"><img src="{{ book2.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
-                                onmouseleave="zoomOut(event)"></a>
-                            <!-- <a>{{ book2.title }}</a> -->
-                        </td>
-                        {% endfor %}                    
-                    </tr>
-                </table>
+                <div class="books_in_row">
+                    <table>
+                        <tr>
+                            {% for book2 in book2 %}
+                            <td>
+                                <div class="eachbook">
+                                <a href="{% url 'library:bookdetail' book2.id %}"><img src="{{ book2.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                                    onmouseleave="zoomOut(event)"></a>
+                                </div>
+                            </td>
+                            {% endfor %}                    
+                        </tr>
+                    </table>
+                </div>
             </div>
             
             
             <div class="level2">
                 <h3 id="level-2">{{ levels.2 }}</h3>
 
-                <table>
-                    <tr>
-                        {% for book3 in book3 %}
-                        <td>
-                            <a href="{% url 'library:bookdetail' book3.id %}"><img src="{{ book3.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
-                                onmouseleave="zoomOut(event)" ></a>
-                            <!-- <a>{{ book3.title }}</a> -->
-                        </td>
-                        {% endfor %}                    
-                    </tr>
-                </table>
-               
+                <div class="books_in_row">
+                    <table>
+                        <tr>
+                            {% for book3 in book3 %}
+                            <td>
+                                <div class="eachbook">
+                                <a href="{% url 'library:bookdetail' book3.id %}"><img src="{{ book3.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                                    onmouseleave="zoomOut(event)" ></a>
+                                </div>
+                            </td>
+                            {% endfor %}                    
+                        </tr>
+                    </table>
+                </div>
             </div>
             
 
             <div class="level3">
                 <h3 id="level-3">{{ levels.3 }}</h3>
 
-                <table>
+                <div class="books_in_row"> 
+                    <table>
                     <tr>
                         {% for book4 in book4 %}
                         <td>
+                            <div class="eachbook">
                             <a href="{% url 'library:bookdetail' book4.id %}"><img src="{{ book4.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
                                 onmouseleave="zoomOut(event)"></a>
-                            <!-- <a>{{ book3.title }}</a> -->
+                            </div>
                         </td>
                         {% endfor %}                    
                     </tr>
-                </table>
+                    </table>
+                </div>
                 
             </div>
 
@@ -85,38 +95,43 @@
             <div class="level4">
                 <h3 id="level-4">{{ levels.4 }}</h3>
 
-                <table>
-                    <tr>
-                        {% for book5 in book5 %}
-                        <td>
-                            <a href="{% url 'library:bookdetail' book5.id %}"><img src="{{ book5.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
-                                onmouseleave="zoomOut(event)"></a>
-                            <!-- <a>{{ book3.title }}</a> -->
-                        </td>
-                        {% endfor %}                    
-                    </tr>
-                </table>
-                
+                <div class="books_in_row">
+                    <table>
+                        <tr>
+                            {% for book5 in book5 %}
+                            <td>
+                                <div class="eachbook">
+                                <a href="{% url 'library:bookdetail' book5.id %}"><img src="{{ book5.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                                    onmouseleave="zoomOut(event)"></a>
+                                </div>
+                            </td>
+                            {% endfor %}                    
+                        </tr>
+                    </table>
+                </div>
             </div>
 
 
             <div class="level5">
                 <h3 id="level-5">{{ levels.5 }}</h3>
 
-                <table>
+                <div class="books_in_row">
+                    <table>
                     <tr>
                         {% for book6 in book6 %}
                         <td>
+                            <div class="eachbook">
                             <a href="{% url 'library:bookdetail' book6.id %}"><img src="{{ book6.cover.url }}" width="150" height="180" onmouseenter="zoomIn(event)"
                                 onmouseleave="zoomOut(event)"></a>
-                            <!-- <a>{{ book3.title }}</a> -->
+                            </div>
                         </td>
                         {% endfor %}                    
                     </tr>
-                </table>
-                
+                    </table>
+                </div>
             </div>
+    
+        </div>
     </div>
-</div>
 
 {% endblock %}
