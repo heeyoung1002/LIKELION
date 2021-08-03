@@ -12,52 +12,80 @@
     <div class="recommendation">
         <div class="levels">
             <div class="level0">
-                <h3>{{ levels.0 }}</h3>
-            
+                <h3 id="level-0">{{ levels.0 }}</h3>
+                
+                <div class="books_in_row"> 
                 <table>
                     <tr>
                         {% for website1 in website1 %}
                         <td>
+                            <div class="eachbook">
                             <a href="{% url 'library:websitedetail' website1.id %}"><img src="{{ website1.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
                                 onmouseleave="zoomOut(event)"></a>
+                            </div>
                         </td>
                         {% endfor %}
                     </tr>
                 </table>
+                </div>
             </div>
 
             <div class="level1">
-                <h3>{{ levels.1 }}</h3>
+                <h3 id="level-1">{{ levels.1 }}</h3>
                 
+                <div class="books_in_row"> 
                 <table>
                     <tr>
                         {% for website2 in website2 %}
                         <td>
-                            <a href="{% url 'library:websitedetail' website2.id %}"></a>
+                            <div class="eachbook">
+                                <a href="{% url 'library:websitedetail' website2.id %}"><img src="{{ website2.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                                    onmouseleave="zoomOut(event)"></a>
+                            </div>
                         </td>
                         {% endfor %}
                     </tr>
                 </table>
+                </div>
             </div>
             
 
             <div class="level1">
-                <h3>{{ levels.2 }}</h3>
+                <h3 id="level-2">{{ levels.2 }}</h3>
                 
+                <div class="books_in_row"> 
                 <table>
                     <tr>
                         {% for website3 in website3 %}
                         <td>
-                            <a href="{% url 'library:websitedetail' website3.id %}"></a>
+                            <div class="eachbook">
+                                <a href="{% url 'library:websitedetail' website3.id %}"><img src="{{ website3.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                                    onmouseleave="zoomOut(event)"></a>
+                            </div>                        
                         </td>
                         {% endfor %}
                     </tr>
                 </table>
+                </div>
             </div>
 
         </div>
 
     </div>
 
+
+    <script>
+        function zoomIn(event) {
+          event.target.style.width = "210px";
+          event.target.style.height = "210px";
+          event.target.style.transition = "all 0.5s";
+        }
+      
+        function zoomOut(event) {
+          event.target.style.width = "150px";
+          event.target.style.height = "180px";
+          event.target.style.transition = "all 0.5s";
+        }
+    </script>
 
 {% endblock %}

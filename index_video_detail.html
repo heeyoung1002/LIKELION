@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'library/style.css' %}">
+<link rel="stylesheet" href="{% static 'library/style-videodetail.css' %}">
 {% endblock %}
 
 
@@ -11,45 +11,66 @@
 
     {% if video %}
     
-    <div>
-        {{ video.cover }}
-    </div>
-
-    <div>
+    <div class="video-detail">
+        <div class="image-detail">
+            <img src="{{ video.cover.url }}" width="350" height="350">
+        </div>
+    
+        <div class="video-descriptions">
         <table>
-            <tr>
-                <th>Title</th>
-                <td>{{ video.title }}</td>
-            </tr>
-            <tr>
-                <th>About</th>
-                <td>{{ video.about }}</td>
-            </tr>
-            <tr>
-                <th>Youtube Link</th>
-                <td><a href="{{ video.urllink }}" target="_blank">{{ video.urllink }}</a></td>
-            </tr>
-            <tr>
-                <th>좋아요를 누르면 마이페이지에 저장됩니다</th>
-                <td>
-                    {% if user.is_authenticated %}
-                        <form method="POST" action="{% url 'library:videolike' video.id %}">
-                        {% csrf_token %}
+            <div class="title">
+                <tr>
+                    <th>🖥️ Title</th>
+                    <td>{{ video.title }}</td>
+                </tr>    
+            </div>
 
-                        {% if user in video.liked_users.all %}
-                            <button type="submit" class="btn btn-primary">LIKE</button>
-                        {% else %}
-                            <button type="submit" class="btn btn-secondary">LIKE</button>
+            <div class="about">
+                <tr>
+                    <th>🖥️ About</th>
+                    <td>{{ video.about }}</td>
+                </tr>
+            </div>
+                
+            <div class="link">
+                <tr>
+                    <th>🖥️ Youtube</th>
+                    <td><a href="{{ video.urllink }}" target="_blank">{{ video.urllink }}</a></td>
+                </tr>    
+            </div>
+
+            <div class="like">
+                <tr>
+                    <th>🖥️ 좋아요</th>
+                    <td>
+                        {% if user.is_authenticated %}
+                            <form method="POST" action="{% url 'library:videolike' video.id %}">
+                            {% csrf_token %}
+        
+                            {% if user in video.liked_users.all %}
+                                <button type="submit" class="btn btn-primary">LIKE</button>
+                            {% else %}
+                                <button type="submit" class="btn btn-secondary">LIKE</button>
+                            {% endif %}
+                            </form>
                         {% endif %}
-                        </form>
-                    {% endif %}
-                </td>
-            </tr>
-        </table>
-    </div>
-   
-    {% endif %}
+                    </td>
+                </tr> 
+            </div>
 
-    <a href="{% url 'library:videosindex' %}">목록으로</a>
+            <div class="list">
+                <tr>
+                    <th></th>
+                    <td><a href="{% url 'library:videosindex' %}">목록으로</a></td>
+                </tr>
+            </div>
+        
+            </table>
+            </div>
+       
+        {% endif %}
+   
+    </div>
+
 
 {% endblock %}

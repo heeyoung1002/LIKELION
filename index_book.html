@@ -134,4 +134,19 @@
         </div>
     </div>
 
+
+    <script>
+        function zoomIn(event) {
+          event.target.style.width = "210px";
+          event.target.style.height = "210px";
+          event.target.style.transition = "all 0.5s";
+        }
+      
+        function zoomOut(event) {
+          event.target.style.width = "150px";
+          event.target.style.height = "180px";
+          event.target.style.transition = "all 0.5s";
+        }
+    </script>
+
 {% endblock %}

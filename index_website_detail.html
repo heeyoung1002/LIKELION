@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'library/style.css' %}">
+<link rel="stylesheet" href="{% static 'library/style-bookdetail.css' %}">
 {% endblock %}
 
 
@@ -11,26 +11,37 @@
    
     {% if website %}
     
-    <div>
-        <img src="{{ website.cover.url }}" width="350" height="350">
-    </div>
+    <div class="book-detail">
+        <div class="image-detail">
+            <img src="{{ website.cover.url }}" width="350" height="350">   
+        </div>
 
-    <div>
+    <div class="book-descriptions">
         <table>
+            <div class="title">
             <tr>
-                <th>Title</th>
+                <th>ℹ️ Title</th>
                 <td>{{ website.title }}</td>
             </tr>
+            </div>
+
+            <div class="about">
             <tr>
-                <th>About</th>
+                <th>ℹ️ About</th>
                 <td>{{ website.about }}</td>
             </tr>
+            </div>
+
+            <div class="link">
             <tr>
-                <th>Youtube Link</th>
+                <th>ℹ️ Youtube</th>
                 <td><a href="{{ website.urllink }}" target="_blank">{{ website.urllink }}</a></td>
             </tr>
+            </div>
+
+            <div class="like">
             <tr>
-                <th>좋아요를 누르면 마이페이지에 저장됩니다</th>
+                <th>ℹ️ 좋아요</th>
                 <td>
                     {% if user.is_authenticated %}
                         <form method="POST" action="{% url 'library:websitelike' website.id %}">
@@ -45,12 +56,21 @@
                     {% endif %}
                 </td>
             </tr>
+            </div>
+
+            <div class="list">
+                <tr>
+                    <th></th>
+                    <td><a href="{% url 'library:websitesindex' %}">목록으로</a></td>
+                </tr>
+            </div>
+
         </table>
-    </div>
+        </div>
    
     {% endif %}
 
-    <a href="{% url 'library:websitesindex' %}">목록으로</a>
+    </div>
 
 
 {% endblock %}

@@ -12,53 +12,82 @@
     <div class="recommendation">
         <div class="levels">
             <div class="level0">
-                <h3>{{ levels.0 }}</h3>
+                <h3 id="level--0">{{ levels.0 }}</h3>
             
+                <div class="books_in_row">
                 <table>
                     <tr>
                         {% for video1 in video1 %}
                         <td>
-                            <a href="{% url 'library:videodetail' video1.id %}"><img src="{{ video1.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                        <div class="eachvideo">
+                            <a href="{% url 'library:videodetail' video1.id %}"><img src="{{ video1.cover.url }}" width="210px" height="180px" onmouseenter="zoomIn(event)"
                                 onmouseleave="zoomOut(event)"></a>
+                        </div>
                         </td>
                         {% endfor %}
                     </tr>
                 </table>
+                </div>
             </div>
 
             <div class="level1">
-                <h3>{{ levels.1 }}</h3>
+                <h3 id="level--1">{{ levels.1 }}</h3>
                 
+                <div class="books_in_row">
                 <table>
                     <tr>
                         {% for video2 in video2 %}
                         <td>
-                            <a href="{% url 'library:videodetail' video2.id %}"><img src="{{ video2.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                        <div class="eachvideo">
+                            <a href="{% url 'library:videodetail' video2.id %}"><img src="{{ video2.cover.url }}" width="210px" height="180px" onmouseenter="zoomIn(event)"
                                 onmouseleave="zoomOut(event)"></a>
+                        </div>
                         </td>
+
                         {% endfor %}
                     </tr>
                 </table>
+                </div>
             </div>
             
 
             <div class="level1">
-                <h3>{{ levels.2 }}</h3>
+                <h3 id="level--2">{{ levels.2 }}</h3>
                 
+                <div class="books_in_row">
                 <table>
                     <tr>
                         {% for video3 in video3 %}
                         <td>
-                            <a href="{% url 'library:videodetail' video3.id %}"><img src="{{ video3.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)"
+                        <div class="eachvideo">
+                            <a href="{% url 'library:videodetail' video3.id %}"><img src="{{ video3.cover.url }}" width="210px" height="180px" onmouseenter="zoomIn(event)"
                                 onmouseleave="zoomOut(event)"></a>
+                        </div>
                         </td>
                         {% endfor %}
                     </tr>
                 </table>
+                </div>
             </div>
 
         </div>
 
     </div>
+
+
+    <script>
+        
+        function zoomIn(event) {
+          event.target.style.width = "230px";
+          event.target.style.height = "200px";
+          event.target.style.transition = "all 0.5s";
+        }
+      
+        function zoomOut(event) {
+          event.target.style.width = "210px";
+          event.target.style.height = "180px";
+          event.target.style.transition = "all 0.5s";
+        }
+    </script>
     
 {% endblock %}

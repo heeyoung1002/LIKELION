@@ -9,48 +9,63 @@
 
 
 {% block content %} 
-<div class="container">
+<!-- <div class="container"> -->
     {% if book %}
     
    <div class="book-detail">
-        <div>
+        <div class="image-detail">
             <img src="{{ book.cover.url }}" width="350" height="350">
         </div>
 
-        <div>
+        <div class="book-descriptions">
         <table>
-            <tr>
-                <th>Title</th>
-                <td>{{ book.title }}</td>
-            </tr>
-            <tr>
-                <th>About</th>
-                <td>{{ book.about }}</td>
-            </tr>
-            <tr>
-                <th>Youtube Link</th>
-                <td><a href="{{ book.urllink }}" target="_blank">{{ book.urllink }}</a></td>
-            </tr>
-            <tr>
-                <th>좋아요를 누르면 마이페이지에 저장됩니다</th>
-                <td>
-                    {% if user.is_authenticated %}
-                        <form method="POST" action="{% url 'library:booklike' book.id %}">
-                        {% csrf_token %}
-
-                        {% if user in book.liked_users.all %}
-                            <button type="submit" class="btn btn-primary">LIKE</button>
-                        {% else %}
-                            <button type="submit" class="btn btn-secondary">LIKE</button>
+            <div class="title">
+                <tr>
+                    <th>📖 Title </th>
+                    <td>{{ book.title }}</td>
+                </tr>
+            </div>
+            
+            <div class="about">
+                <tr>
+                    <th>📖 About</th>
+                    <td>{{ book.about }}</td>
+                </tr>
+            </div>
+            
+            <div class="link">
+                <tr>
+                    <th>📖 Youtube</th>
+                    <td><a href="{{ book.urllink }}" target="_blank">{{ book.urllink }}</a></td>
+                </tr>
+            </div>
+            
+            <div class="like">
+                <tr>
+                    <th>📖 좋아요</th>
+                    <td>
+                        {% if user.is_authenticated %}
+                            <form method="POST" action="{% url 'library:booklike' book.id %}">
+                            {% csrf_token %}
+    
+                            {% if user in book.liked_users.all %}
+                                <button type="submit" class="btn btn-primary">LIKE</button>
+                            {% else %}
+                                <button type="submit" class="btn btn-secondary">LIKE</button>
+                            {% endif %}
+                            </form>
                         {% endif %}
-                        </form>
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <th></th>
-                <td><a href="{% url 'library:booksindex' %}">목록으로</a></td>
-            </tr>
+                    </td>
+                </tr>
+            </div>
+            
+            <div class="list">
+                <tr>
+                    <th></th>
+                    <td><a href="{% url 'library:booksindex' %}">목록으로</a></td>
+                </tr>
+            </div>
+
         </table>
         </div>
    
@@ -58,7 +73,7 @@
 
    </div>
 
-</div>
+<!-- </div> -->
     
 
 {% endblock %}
