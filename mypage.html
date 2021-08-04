@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'library/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="recommendation">
+    <div class="levels">
+        <div class="level0">
+            <h3 id="level--0">레벨별원서</h3>
+        
+            <div class="books_in_row">
+            <table>
+                <tr>
+                    {% for like_user_book in like_user_book %}
+                    <td>
+                    <div class="eachbook">
+                        <img src="{{ like_user_book.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+                    </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+            </div>
+        </div>
+
+
+        <div class="level1">
+            <h3 id="level--1">영어 영상물</h3>
+            
+            <div class="books_in_row">
+            <table>
+                <tr>
+                    {% for like_user_video in like_user_video  %}
+                    <td>
+                    <div class="eachvideo">
+                        <img src="{{ like_user_video.cover.url }}" width="210px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+                    </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+            </div>
+        </div>
+        
+
+        <div class="level2">
+            <h3 id="level--2">도서 및 사이트</h3>
+            
+            <div class="books_in_row">
+            <table>
+                <tr>
+                    {% for like_user_website in like_user_website  %}
+                    <td>
+                    <div class="eachvideo">
+                        <img src="{{ like_user_website.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+                    </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    function zoomIn(event) {
+      event.target.style.width = "210px";
+      event.target.style.height = "210px";
+      event.target.style.transition = "all 0.5s";
+    }
+  
+    function zoomOut(event) {
+      event.target.style.width = "150px";
+      event.target.style.height = "180px";
+      event.target.style.transition = "all 0.5s";
+    }
+</script>
+
+{% endblock %}
