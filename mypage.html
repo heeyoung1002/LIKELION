@@ -21,7 +21,7 @@
                     {% for like_user_book in like_user_book %}
                     <td>
                     <div class="eachbook">
-                        <img src="{{ like_user_book.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+                        <a href="{% url 'library:bookdetail' like_user_book.id %}"><img src="{{ like_user_book.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"></a>
                     </div>
                     </td>
                     {% endfor %}
@@ -40,7 +40,7 @@
                     {% for like_user_video in like_user_video  %}
                     <td>
                     <div class="eachvideo">
-                        <img src="{{ like_user_video.cover.url }}" width="210px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+                        <a href="{% url 'library:videodetail' like_user_video.id %}"><img src="{{ like_user_video.cover.url }}" width="210px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"></a>
                     </div>
                     </td>
                     {% endfor %}
@@ -59,7 +59,7 @@
                     {% for like_user_website in like_user_website  %}
                     <td>
                     <div class="eachvideo">
-                        <img src="{{ like_user_website.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+                        <a href="{% url 'library:websitedetail' like_user_website.id %}"><img src="{{ like_user_website.cover.url }}" width="150px" height="180px" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"></a>
                     </div>
                     </td>
                     {% endfor %}
